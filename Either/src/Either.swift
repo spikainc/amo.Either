@@ -45,7 +45,7 @@ public enum Either<L, R> {
         }
     }
     
-    public static func coproduct<T>(f: L -> T, g: R -> T) -> (Either<L, R> -> T) {
+    public static func coproduct<T>(f: L -> T, _ g: R -> T) -> (Either<L, R> -> T) {
         return {e in
             switch e {
             case .Left(let l):
